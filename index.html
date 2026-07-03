@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <h1>Inventory Management System</h1>
+
+        <!-- Input Section -->
+        <div class="input-section">
+
+        <input type="text" id="productName" placeholder="Product Name">
+
+<input type="number" id="productQty" placeholder="Quantity">
+
+<input type="number" id="productPrice" placeholder="Price">
+<input type="number" id="productSalePrice" placeholder="Sale Price">
+<select id="productCategory">
+    <option value="">Select Category</option>
+    <option value="Grocery">Grocery</option>
+    <option value="Electronics">Electronics</option>
+    <option value="Stationery">Stationery</option>
+    <option value="Medicine">Medicine</option>
+    <option value="Cosmetics">Cosmetics</option>
+    <option value="Other">Other</option>
+</select>
+
+<button onclick="addProduct()">Add Product</button>    
+        </div>
+
+        <!-- Search -->
+        <input
+            type="text"
+            id="searchBox"
+            placeholder="Search Product"
+            onkeyup="searchProduct()">
+<button onclick="exportCSV()">
+    Export to Excel
+</button>
+<select id="filterCategory" onchange="filterByCategory()">
+    <option value="">All Categories</option>
+    <option value="Grocery">Grocery</option>
+    <option value="Electronics">Electronics</option>
+    <option value="Stationery">Stationery</option>
+    <option value="Medicine">Medicine</option>
+    <option value="Cosmetics">Cosmetics</option>
+    <option value="Other">Other</option>
+</select>
+<button onclick="sortHighToLow()">Sort: High → Low</button>
+<button onclick="sortLowToHigh()">Sort: Low → High</button>
+        <!-- Product List -->
+        <h2>Product List</h2>
+
+        <div id="productList">
+
+        </div>
+
+        <!-- Summary -->
+        <div class="summary">
+
+            <p>Total Products:
+                <span id="totalProducts">0</span>
+            </p>
+
+            <p>Total Stock:
+                <span id="totalStock">0</span>
+            </p>
+          <p>Total Value:
+    <span id="totalValue">0</span>
+</p>  
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+</div> <!-- container close -->
+
+
+<div class="dashboard">
+
+    <div class="card">
+        <h3>Total Products</h3>
+        <h2 id="totalProductsCard">0</h2>
+    </div>
+
+    <div class="card">
+        <h3>Total Stock</h3>
+        <h2 id="totalStockCard">0</h2>
+    </div>
+
+    <div class="card">
+        <h3>Low Stock</h3>
+        <h2 id="lowStockCard">0</h2>
+
+    </div>
+ <div class="card">
+    <h3>Total Profit</h3>
+    <h2 id="totalProfit">0</h2>
+</div>
+
+<div class="card">
+    <h3>Total Loss</h3>
+    <h2 id="totalLoss">0</h2>
+</div>   
+
+</div>
+
+
+<script src="app.js"></script>
+</body>
+</html>
